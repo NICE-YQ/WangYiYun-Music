@@ -15,6 +15,8 @@ export default createStore({
       ar:[{name: "灏灏灏仔"}]
     }],
     playListIndex:0, //默认下标为零
+    isbtnShow:true, //判断歌曲是否正在播放状态 是否显示暂停按钮
+    detailShow:false,//歌曲详情页的显示
   },
   getters: {
   },
@@ -25,6 +27,12 @@ export default createStore({
     },
     updataPlayListIndex:function(state,value){
       state.playListIndex = value
+    },
+    updataIsbtnShow:function(state,value){
+      state.isbtnShow=value
+    },
+    updataDetailShow:function(state){
+      state.detailShow = !state.detailShow;
     }
   },
   actions: {
